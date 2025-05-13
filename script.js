@@ -6,6 +6,36 @@ hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
 
+// Smooth scrolling for navigation links
+document.querySelectorAll('.navbar a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        window.scrollTo({
+            top: targetSection.offsetTop - 80,
+            behavior: 'smooth'
+        });
+        navMenu.classList.remove('active'); // Close menu on mobile after clicking
+    });
+});
+
+// Event listener for Join the Clan button
+document.getElementById('joinClanBtn').addEventListener('click', () => {
+    window.scrollTo({
+        top: document.getElementById('join').offsetTop - 80,
+        behavior: 'smooth'
+    });
+});
+
+// Ensure project links work by not overriding their default behavior
+document.querySelectorAll('.project-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+        // Let the default behavior (navigating to href) happen
+        // No need to preventDefault unless adding custom behavior
+    });
+});
+
 // Typing animation for hero tagline
 const typingElement = document.querySelector('.typing');
 const text = typingElement.textContent;
@@ -31,7 +61,7 @@ const matrixCtx = matrixCanvas.getContext('2d');
 matrixCanvas.height = window.innerHeight;
 matrixCanvas.width = window.innerWidth;
 
-const chars = '01@#$%'; // Updated to include more symbols
+const chars = '01@#$%';
 const fontSize = 14;
 const columns = matrixCanvas.width / fontSize;
 const drops = [];
@@ -70,6 +100,10 @@ window.addEventListener('resize', () => {
 const canvas = document.getElementById('snakeGame');
 const ctx = canvas.getContext('2d');
 
+// Ensure canvas size is set correctly
+canvas.width = 400;
+canvas.height = 400;
+
 const gridSize = 20;
 const tileCount = canvas.width / gridSize;
 let snake = [{ x: 10, y: 10 }];
@@ -77,8 +111,14 @@ let food = { x: 15, y: 15 };
 let dx = 0;
 let dy = 0;
 let score = 0;
+let gameOver = false;
+
+const scoreElement = document.getElementById('score');
+const gameOverElement = document.getElementById('gameOver');
 
 function drawGame() {
+    if (gameOver) return;
+
     ctx.fillStyle = '#111';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -95,6 +135,7 @@ function drawGame() {
 
     if (head.x === food.x && head.y === food.y) {
         score += 10;
+        scoreElement.textContent = score;
         food = {
             x: Math.floor(Math.random() * tileCount),
             y: Math.floor(Math.random() * tileCount)
@@ -104,14 +145,19 @@ function drawGame() {
     }
 
     if (head.x < 0 || head.x >= tileCount || head.y < 0 || head.y >= tileCount) {
-        resetGame();
+        endGame();
     }
 
     for (let i = 1; i < snake.length; i++) {
         if (head.x === snake[i].x && head.y === snake[i].y) {
-            resetGame();
+            endGame();
         }
     }
+}
+
+function endGame() {
+    gameOver = true;
+    gameOverElement.style.display = 'block';
 }
 
 function resetGame() {
@@ -119,13 +165,18 @@ function resetGame() {
     dx = 0;
     dy = 0;
     score = 0;
+    scoreElement.textContent = score;
     food = { x: 15, y: 15 };
+    gameOver = false;
+    gameOverElement.style.display = 'none';
 }
 
 document.addEventListener('keydown', (e) => {
     if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
         e.preventDefault();
     }
+
+    if (gameOver) return;
 
     switch (e.key) {
         case 'ArrowUp':
@@ -155,6 +206,8 @@ canvas.addEventListener('touchstart', (e) => {
 
 canvas.addEventListener('touchmove', (e) => {
     e.preventDefault();
+    if (gameOver) return;
+
     const touch = e.touches[0];
     const deltaX = touch.clientX - touchStartX;
     const deltaY = touch.clientY - touchStartY;
