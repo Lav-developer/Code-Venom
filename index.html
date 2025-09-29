@@ -1,202 +1,514 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Venom</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Venom • Elite Coding Collective</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <canvas id="matrixRain"></canvas>
+<body class="loading">
+  <!-- Loading Screen -->
+  <div class="loader">
+    <div class="loader-text">
+      <span>C</span><span>O</span><span>D</span><span>E</span>
+      <span class="space"></span>
+      <span>V</span><span>E</span><span>N</span><span>O</span><span>M</span>
+    </div>
+    <div class="loader-progress"></div>
+  </div>
 
-    <header>
-        <div class="logo">
-            <img src="Code venom.png" alt="Code Venom Logo" class="logo-img">
+  <!-- Cursor Effect -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- Matrix Rain -->
+  <canvas id="matrixRain"></canvas>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Navigation - Fixed duplication issue -->
+  <nav class="navbar" id="mainNavbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <img src="Code venom logo.png" alt="Code Venom" class="logo">
+        <span class="brand-text">Code Venom</span>
+      </div>
+      <div class="nav-menu" id="navMenu">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#team" class="nav-link">Team</a>
+        <a href="#events" class="nav-link">Events</a>
+        <a href="#contact" class="nav-link cta-btn">Join Us</a>
+      </div>
+      <div class="nav-controls">
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+          <i class="fas fa-adjust"></i>
+        </button>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#resources">Resources</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#snake">Play Snake</a></li>
-                <li><a href="#join">Join Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="hamburger">☰</div>
-    </header>
+      </div>
+    </div>
+  </nav>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="typing">Unleash Your Coding Instincts</h1>
-            <p class="hero-subtitle">Join the ultimate coding club at IET DSMNRU and strike with venomous precision!</p>
-            <button id="joinClanBtn" class="cta">Join the Clan</button>
-            <p class="stats">50+ Members | 10+ Projects | 5 Hackathons Won</p>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>🔥 Elite Coding Collective</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="line">
+          <span class="word glitch" data-text="CODE">CODE</span>
+          <span class="word neon" data-text="VENOM">VENOM</span>
+        </span>
+        <span class="line">
+          <span class="word typing">Strike the Code</span>
+        </span>
+      </h1>
+      <p class="hero-subtitle fade-in">
+        Where algorithms meet artistry. Join IET-DSMNRU's most exclusive coding collective.
+      </p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number" data-target="15">0</span>
+          <span class="stat-label">Active Members</span>
         </div>
-    </section>
-
-    <section id="about" class="section about">
-        <h2>Who We Are</h2>
-        <p>Welcome to "Code Venom," the dynamic coding club at IET DSMNRU! We’re dedicated to sharpening your coding skills, sparking technological innovation, and bridging the gap between classroom learning and real-world applications. With the university’s backing, we offer mentorship, hands-on projects, and industry exposure. Join us and code the future, one project at a time!</p>
-    </section>
-
-    <section id="guidebook" class="section guidebook">
-        <h2>Our Guidebook</h2>
-        <p>Explore the core of Code Venom through our official guidebook. Here’s what we stand for:</p>
-        <div class="guidebook-content">
-            <h3>Objectives</h3>
-            <ul>
-                <li>Level Up Your Skills: Hands-on workshops and projects.</li>
-                <li>Join a Thriving Community: Connect and grow with coders.</li>
-                <li>Unlock Opportunities: Access premium resources and guidance.</li>
-                <li>Fuel Innovation: Build projects and compete in challenges.</li>
-            </ul>
-            <h3>Code of Conduct</h3>
-            <p>Be kind, work with integrity, and foster a supportive community. We celebrate diversity and ethical tech practices.</p>
-            <h3>Benefits</h3>
-            <p>Industry-aligned training, networking, certifications, and internship opportunities.</p>
+        <div class="stat-item">
+          <span class="stat-number" data-target="1">0</span>
+          <span class="stat-label">Projects Built</span>
         </div>
-    </section>
-
-    <section id="events" class="section events">
-        <h2>What’s Brewing?</h2>
-        <div class="event-grid">
-            <div class="event-card">
-                <h3>Hackathon: CodeStrike 2025</h3>
-                <p>April 10, 2025</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa pariatur cumque non id reprehenderit obcaecati ut rem soluta, ipsam delectus excepturi ad possimus dolor quaerat adipisci. Iste nihil ducimus voluptas!</p>
-            </div>
-            <div class="event-card">
-                <h3>AI Workshop: Neural Net Basics</h3>
-                <p>March 30, 2025</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae perspiciatis rerum dicta sunt! Rem exercitationem obcaecati, laborum doloribus fugit, vitae quas iure tenetur impedit culpa dolor, voluptate reprehenderit ea. Repellat!</p>
-            </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="5">0</span>
+          <span class="stat-label">Hackathons Won</span>
         </div>
-    </section>
+      </div>
+      <div class="hero-cta">
+        <button class="cta-primary" onclick="scrollToSection('contact')">
+          <span>Join the Elite</span>
+          <div class="button-bg"></div>
+        </button>
+        <button class="cta-secondary" onclick="scrollToSection('projects')">
+          <span>Explore Portfolio</span>
+        </button>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="floating-elements">
+        <div class="code-block" data-lang="js">console.log('Hello, Venom!');</div>
+        <div class="code-block" data-lang="py">print("Strike the code")</div>
+        <div class="code-block" data-lang="cpp">#include &lt;venom.h&gt;</div>
+      </div>
+    </div>
+  </section>
 
-    <section id="team" class="section team">
-        <h2>Meet Our Team</h2>
-        <div class="team-grid">
-            <div class="team-card">
-                <img src="/Team/Lav Profile.png" alt="Team Member 1" class="team-img">
-                <h3>John Doe</h3>
-                <p>President</p>
-                <div class="team-links">
-                    <a href="https://linkedin.com/in/johndoe" target="_blank">LinkedIn</a>
-                    <a href="mailto:johndoe@gmail.com">Gmail</a>
-                </div>
-            </div>
-            <div class="team-card">
-                <img src="/Team/Lav Profile.png" alt="Team Member 2" class="team-img">
-                <h3>Jane Smith</h3>
-                <p>Vice President</p>
-                <div class="team-links">
-                    <a href="https://linkedin.com/in/janesmith" target="_blank">LinkedIn</a>
-                    <a href="mailto:janesmith@gmail.com">Gmail</a>
-                </div>
-            </div>
-            <div class="team-card">
-                <img src="/Team/Lav Profile.png" alt="Team Member 3" class="team-img">
-                <h3>Sam Wilson</h3>
-                <p>Tech Lead</p>
-                <div class="team-links">
-                    <a href="https://linkedin.com/in/samwilson" target="_blank">LinkedIn</a>
-                    <a href="mailto:samwilson@gmail.com">Gmail</a>
-                </div>
-            </div>
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="title-bg">About</span>
+          The Venom Legacy
+        </h2>
+        <p class="section-subtitle">Where passion meets precision in the art of code</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-card mission">
+          <div class="card-icon">🎯</div>
+          <h3>Our Mission</h3>
+          <p>To cultivate the next generation of coding masters through collaborative innovation and relentless pursuit of excellence.</p>
         </div>
-    </section>
-
-    <section id="projects" class="section projects">
-        <h2>Venomous Creations</h2>
-        <div class="event-grid">
-            <div class="project-card">
-                <h3>DSMNRU PYQ</h3>
-                <p>A collection of all last years question paper of DSMNRU</p>
-                <a href="https://dsmnru-pyq.netlify.app" target="_blank" class="project-link">Visit Now</a>
-            </div>
-            <div class="project-card">
-                <h3>Snake AI</h3>
-                <p>An AI-powered version of the classic Snake game, developed using Python and TensorFlow.</p>
-                <a href="https://github.com/codevenom/snake-ai" target="_blank" class="project-link">View on GitHub</a>
-            </div>
+        <div class="about-card vision">
+          <div class="card-icon">🚀</div>
+          <h3>Our Vision</h3>
+          <p>Building a community where code becomes art, problems become opportunities, and developers become legends.</p>
         </div>
-    </section>
-
-    <section id="resources" class="section resources">
-        <h2>Fuel Your Code</h2>
-        <p>Explore our curated resources to level up your coding skills.</p>
-        <ul>
-            <li>Top 10 Git Commands Every Developer Should Know</li>
-            <li>Python for Beginners: A Comprehensive Guide</li>
-            <li>JavaScript Cheat Sheet for Web Dev</li>
-        </ul>
-    </section>
-
-    <section id="testimonials" class="section testimonials">
-        <h2>What Our Members Say</h2>
-        <div class="event-grid">
-            <div class="testimonial-card">
-                <p>"Code Venom gave me the confidence to compete in my first hackathon. I learned so much and made lifelong friends!"</p>
-                <p class="author">- Sarah, 2nd Year</p>
-            </div>
-            <div class="testimonial-card">
-                <p>"The workshops are amazing! I went from zero to building my own app in just a few months."</p>
-                <p class="author">- Edison, 3rd Year</p>
-            </div>
+        <div class="about-card values">
+          <div class="card-icon">⚡</div>
+          <h3>Our Values</h3>
+          <ul>
+            <li>Innovation through collaboration</li>
+            <li>Excellence in execution</li>
+            <li>Continuous learning mindset</li>
+            <li>Ethical technology practices</li>
+          </ul>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="gallery" class="section gallery">
-        <h2>Gallery</h2>
-        <p>Check out some highlights from our past events!</p>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="code.jpg" alt="Hackathon 2024">
-                <p>Hackathon 2024: Team Venom wins 1st place!</p>
-            </div>
-            <div class="gallery-item">
-                <img src="code.jpg" alt="AI Workshop">
-                <p>AI Workshop: Learning in action.</p>
-            </div>
-            <div class="gallery-item">
-                <img src="code.jpg" alt="Code Venom Meetup">
-                <p>Code Venom Meetup: Bonding over code.</p>
-            </div>
+  <!-- Skills Section -->
+  <section id="skills" class="section dark">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="title-bg">Skills</span>
+          Our Arsenal
+        </h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <div class="category-header">
+            <h3>Frontend Mastery</h3>
+            <div class="skill-progress" data-progress="95"></div>
+          </div>
+          <div class="skill-list">
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Vue.js</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">Next.js</span>
+          </div>
         </div>
-    </section>
-
-    <section id="snake" class="section snake-game">
-        <h2>Play the Code Venom Snake Game</h2>
-        <p>Use arrow keys (desktop) or swipe (mobile) to move. Eat the green "code bits" to grow!</p>
-        <div class="game-info">
-            <p>Score: <span id="score">0</span></p>
-            <p id="gameOver" style="display: none; color: #ff4444;">Game Over! Refresh to play again.</p>
+        <div class="skill-category">
+          <div class="category-header">
+            <h3>Backend Power</h3>
+            <div class="skill-progress" data-progress="90"></div>
+          </div>
+          <div class="skill-list">
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">Go</span>
+          </div>
         </div>
-        <canvas id="snakeGame" width="400" height="400"></canvas>
-    </section>
+        <div class="skill-category">
+          <div class="category-header">
+            <h3>AI & ML</h3>
+            <div class="skill-progress" data-progress="85"></div>
+          </div>
+          <div class="skill-list">
+            <span class="skill-tag">TensorFlow</span>
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">OpenAI API</span>
+            <span class="skill-tag">Computer Vision</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <div class="category-header">
+            <h3>DevOps & Cloud</h3>
+            <div class="skill-progress" data-progress="88"></div>
+          </div>
+          <div class="skill-list">
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">Kubernetes</span>
+            <span class="skill-tag">CI/CD</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section id="join" class="section join">
-        <h2>Become Part of the Venom</h2>
-        <p>Ready to join the clan? Fill out our Form to become a member!</p>
-    </section>
+  <!-- Projects Showcase -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="title-bg">Projects</span>
+          Digital Masterpieces
+        </h2>
+      </div>
+      <div class="projects-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web Apps</button>
+        <button class="filter-btn" data-filter="ai">AI/ML</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+        <button class="filter-btn" data-filter="game">Games</button>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card" data-category="ai">
+          <div class="project-image">
+            <img src="code.jpg" alt="AI Snake">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#game" class="project-link">Live Demo</a>
+                <a href="#" class="project-link">GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Neural Snake AI</h3>
+            <p>Deep reinforcement learning meets classic gameplay. Watch AI master the art of snake navigation.</p>
+            <div class="project-tech">
+              <span>Python</span>
+              <span>TensorFlow</span>
+              <span>Pygame</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-category="web">
+          <div class="project-image">
+            <img src="code.jpg" alt="Portfolio Generator">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link">Live Demo</a>
+                <a href="#" class="project-link">GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Portfolio Generator</h3>
+            <p>Automated portfolio creation tool with modern design templates and responsive layouts.</p>
+            <div class="project-tech">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>MongoDB</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-category="web">
+          <div class="project-image">
+            <img src="code.jpg" alt="Question Vault">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link">Live Demo</a>
+                <a href="#" class="project-link">GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>DS Question Vault</h3>
+            <p>Comprehensive database of previous year question papers with advanced search functionality.</p>
+            <div class="project-tech">
+              <span>Vue.js</span>
+              <span>Express.js</span>
+              <span>PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section id="contact" class="section contact">
-        <h2>Get in Touch</h2>
-        <p>Email: kush210431+codevenom@gmail.com</p>
-        <p>Follow us on social media: <a href="#">X</a> | <a href="#">Instagram</a> | <a href="#">Discord</a></p>
-    </section>
+  <!-- Team Section -->
+  <section id="team" class="section dark">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="title-bg">Team</span>
+          The Venomous Core
+        </h2>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="member-avatar">
+            <div class="avatar-placeholder">
+              <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="member-socials">
+              <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+          <div class="member-info">
+            <h3>Kushagra Sharma</h3>
+            <p class="member-role">Founder & Lead Architect</p>
+            <p class="member-bio">Visionary coder who transforms ideas into digital reality. Specialized in full-stack development and AI integration.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="member-avatar">
+            <div class="avatar-placeholder">
+              <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="member-socials">
+              <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="member-info">
+            <h3>Vice President</h3>
+            <p class="member-role">Technical Lead</p>
+            <p class="member-bio">Expert in backend systems and database architecture with passion for scalable solutions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <p>© 2025 Code Venom | All Rights Reserved</p>
-    </footer>
+  <!-- Interactive Game Section -->
+  <section id="game" class="section">
+    <div class="container">
+      <div class="game-container">
+        <h2>🎮 Venom Snake Challenge</h2>
+        <div class="game-ui">
+          <div class="game-stats">
+            <span>Score: <span id="score">0</span></span>
+            <span>High Score: <span id="highScore">0</span></span>
+          </div>
+          <canvas id="snakeGame" width="400" height="400"></canvas>
+          <div class="game-controls">
+            <button id="startGame" class="game-btn">Start Game</button>
+            <button id="pauseGame" class="game-btn">Pause</button>
+            <button id="resetGame" class="game-btn">Reset</button>
+          </div>
+          <div class="game-instructions">
+            <p>Use arrow keys or WASD to move. Eat the food to grow!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
-</script>
+  <!-- Events & Timeline -->
+  <section id="events" class="section dark">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="title-bg">Events</span>
+          Our Journey
+        </h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">Dec 2024</div>
+          <div class="timeline-content">
+            <h3>Hackathon Champions</h3>
+            <p>Team Venom dominates the National Coding Championship with our AI-powered healthcare solution.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Nov 2024</div>
+          <div class="timeline-content">
+            <h3>100+ Members Milestone</h3>
+            <p>Crossed the century mark in membership, establishing ourselves as the largest coding club in DSMNRU.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Oct 2024</div>
+          <div class="timeline-content">
+            <h3>Tech Symposium 2024</h3>
+            <p>Successfully organized the largest tech event in university history with 500+ participants.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Join -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2>Ready to Strike?</h2>
+          <p>Join the most elite coding collective at IET-DSMNRU. Transform your passion into mastery.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>kush210431+codevenom@gmail.com</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>IET-DSMNRU, Aurangabad</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <span>+91 XXX XXX XXXX</span>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <h3>Join the Elite</h3>
+          <div class="form-group">
+            <input type="text" id="name" name="name" required>
+            <label for="name">Full Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" required>
+            <label for="email">Email Address</label>
+          </div>
+          <div class="form-group">
+            <input type="text" id="skills" name="skills" required>
+            <label for="skills">Primary Skills</label>
+          </div>
+          <div class="form-group">
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <label for="message">Why do you want to join Code Venom?</label>
+          </div>
+          <button type="submit" class="submit-btn">
+            <span>Submit Application</span>
+            <div class="button-bg"></div>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="images/logo.png" alt="Code Venom" class="footer-logo">
+          <p>Strike the code, bit by bit.</p>
+        </div>
+        <div class="footer-links">
+          <div class="link-group">
+            <h4>Quick Links</h4>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#team">Team</a>
+            <a href="#events">Events</a>
+          </div>
+          <div class="link-group">
+            <h4>Resources</h4>
+            <a href="#">Documentation</a>
+            <a href="#">Tutorials</a>
+            <a href="#">Blog</a>
+            <a href="#">FAQ</a>
+          </div>
+          <div class="link-group">
+            <h4>Contact</h4>
+            <a href="mailto:kush210431+codevenom@gmail.com">Email</a>
+            <a href="#">Discord</a>
+            <a href="#">GitHub</a>
+            <a href="#">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Code Venom • IET-DSMNRU. All rights reserved.</p>
+        <p>Crafted with 💚 by the Venom Team</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Emergency Loader Fallback -->
+  <script>
+    // Ensure loading screen disappears even if main script fails
+    setTimeout(() => {
+      const loader = document.querySelector('.loader');
+      const body = document.body;
+      if (loader && body) {
+        loader.style.opacity = '0';
+        body.classList.remove('loading');
+        setTimeout(() => {
+          loader.style.display = 'none';
+        }, 500);
+      }
+    }, 3000); // 3 seconds fallback
+  </script>
+  
+  <!-- Font Awesome (replace with your kit ID) -->
+  <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
 </body>
 </html>
