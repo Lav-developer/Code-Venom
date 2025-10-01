@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refund and Cancellation Policy • Code Venom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .legal-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 120px 20px 60px;
+      color: #e0e0e0;
+      line-height: 1.8;
+    }
+    .legal-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .legal-title {
+      font-size: 3rem;
+      color: #00ff5b;
+      margin-bottom: 10px;
+      text-shadow: 0 0 20px rgba(0, 255, 91, 0.5);
+    }
+    .legal-subtitle {
+      color: #888;
+      font-size: 1.1rem;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    .section-title {
+      font-size: 1.5rem;
+      color: #00ff5b;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #00ff5b;
+      padding-bottom: 10px;
+    }
+    .subsection {
+      margin-bottom: 25px;
+    }
+    .subsection-title {
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+    .legal-text {
+      margin-bottom: 15px;
+    }
+    .contact-info {
+      background: rgba(0, 255, 91, 0.1);
+      border: 1px solid #00ff5b;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 30px 0;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 30px;
+      color: #00ff5b;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .back-link:hover {
+      text-shadow: 0 0 10px rgba(0, 255, 91, 0.8);
+    }
+    .highlight-box {
+      background: rgba(0, 255, 91, 0.1);
+      border-left: 4px solid #00ff5b;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+    .policy-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .policy-table th {
+      background: rgba(0, 255, 91, 0.2);
+      color: #00ff5b;
+      padding: 15px;
+      text-align: left;
+      font-weight: 600;
+    }
+    .policy-table td {
+      padding: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .policy-table tr:last-child td {
+      border-bottom: none;
+    }
+    ul, ol {
+      padding-left: 30px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .important-notice {
+      background: rgba(255, 193, 7, 0.1);
+      border: 1px solid #ffc107;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 30px 0;
+      color: #ffc107;
+    }
+  </style>
+</head>
+<body>
+  <!-- Matrix Rain -->
+  <canvas id="matrixRain"></canvas>
+
+  <div class="legal-container">
+    <a href="index.html" class="back-link">← Back to Code Venom</a>
+    
+    <div class="legal-header">
+      <h1 class="legal-title">Refund and Cancellation Policy</h1>
+      <p class="legal-subtitle">Last Updated: October 1, 2025</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">1. Overview</h2>
+      <p class="legal-text">
+        This Refund and Cancellation Policy outlines the terms and conditions for refunds and cancellations related to Code Venom events, workshops, programs, and services. Code Venom is committed to providing fair and transparent policies while maintaining the quality of our educational programs.
+      </p>
+      <div class="important-notice">
+        <p><strong>Important:</strong> Most Code Venom events and activities are free for IET-DSMNRU students. This policy primarily applies to premium workshops, specialized training programs, hackathons with prizes, and external participant fees.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">2. Event Categories and Policies</h2>
+      
+      <table class="policy-table">
+        <thead>
+          <tr>
+            <th>Event Type</th>
+            <th>Fee Structure</th>
+            <th>Cancellation Policy</th>
+            <th>Refund Policy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Regular Workshops</td>
+            <td>Free for IET-DSMNRU students</td>
+            <td>Cancel up to 24 hours before</td>
+            <td>N/A (Free events)</td>
+          </tr>
+          <tr>
+            <td>Premium Workshops</td>
+            <td>₹50 - ₹200</td>
+            <td>Cancel up to 48 hours before</td>
+            <td>Full refund if cancelled 48+ hours before</td>
+          </tr>
+          <tr>
+            <td>Hackathons</td>
+            <td>₹100 - ₹500 registration</td>
+            <td>Cancel up to 72 hours before</td>
+            <td>80% refund if cancelled 72+ hours before</td>
+          </tr>
+          <tr>
+            <td>External Participant Fees</td>
+            <td>₹200 - ₹1000</td>
+            <td>Cancel up to 1 week before</td>
+            <td>70% refund if cancelled 1+ week before</td>
+          </tr>
+          <tr>
+            <td>Certification Programs</td>
+            <td>₹500 - ₹2000</td>
+            <td>Cancel within first week</td>
+            <td>90% refund within first week</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">3. Cancellation Policies</h2>
+      
+      <div class="subsection">
+        <h3 class="subsection-title">3.1 Participant-Initiated Cancellations</h3>
+        <div class="highlight-box">
+          <p><strong>Standard Cancellation Process:</strong></p>
+          <ol>
+            <li>Contact Code Venom organizing committee via official email or website</li>
+            <li>Provide registration details and reason for cancellation</li>
+            <li>Submit cancellation request within the specified timeframe</li>
+            <li>Receive confirmation of cancellation and refund processing</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title">3.2 Event-Initiated Cancellations</h3>
+        <p class="legal-text">
+          If Code Venom cancels or significantly modifies an event:
+        </p>
+        <ul>
+          <li><strong>Full refund:</strong> 100% refund for cancelled events</li>
+          <li><strong>Rescheduling:</strong> Option to transfer registration to rescheduled event</li>
+          <li><strong>Alternative events:</strong> Credit towards future Code Venom events</li>
+          <li><strong>Force majeure:</strong> Full refund for cancellations due to unforeseen circumstances (natural disasters, pandemics, university closures)</li>
+        </ul>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title">3.3 No-Show Policy</h3>
+        <p class="legal-text">
+          Participants who fail to attend without prior cancellation:
+        </p>
+        <ul>
+          <li>No refund will be provided for no-shows</li>
+          <li>Future event registration may be restricted</li>
+          <li>Exceptions may be made for documented emergencies</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">4. Refund Policies</h2>
+      
+      <div class="subsection">
+        <h3 class="subsection-title">4.1 Refund Timeframes</h3>
+        <table class="policy-table">
+          <thead>
+            <tr>
+              <th>Cancellation Time</th>
+              <th>Refund Percentage</th>
+              <th>Processing Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1+ week before event</td>
+              <td>90-100%</td>
+              <td>5-7 business days</td>
+            </tr>
+            <tr>
+              <td>72+ hours before event</td>
+              <td>70-80%</td>
+              <td>5-7 business days</td>
+            </tr>
+            <tr>
+              <td>48+ hours before event</td>
+              <td>50-70%</td>
+              <td>7-10 business days</td>
+            </tr>
+            <tr>
+              <td>24+ hours before event</td>
+              <td>25-50%</td>
+              <td>7-10 business days</td>
+            </tr>
+            <tr>
+              <td>Less than 24 hours</td>
+              <td>0-25%</td>
+              <td>10-14 business days</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title">4.2 Refund Methods</h3>
+        <p class="legal-text">Refunds will be processed through the same payment method used for registration:</p>
+        <ul>
+          <li><strong>Online payments:</strong> Refunded to original payment method (UPI, card, net banking)</li>
+          <li><strong>Cash payments:</strong> Refunded in cash or via bank transfer</li>
+          <li><strong>Bank transfers:</strong> Processed to the same account</li>
+        </ul>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title">4.3 Processing Fees</h3>
+        <p class="legal-text">
+          A nominal processing fee may be deducted from refunds to cover administrative costs:
+        </p>
+        <ul>
+          <li>Processing fee: ₹10 - ₹50 depending on event fee</li>
+          <li>No processing fee for Code Venom-initiated cancellations</li>
+          <li>No processing fee for emergency cancellations with valid documentation</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">5. Special Circumstances</h2>
+      
+      <div class="subsection">
+        <h3 class="subsection-title">5.1 Medical Emergencies</h3>
+        <p class="legal-text">
+          Full refund available with valid medical documentation, regardless of cancellation timeframe.
+        </p>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title">5.2 Academic Conflicts</h3>
+        <p class="legal-text">
+          Students facing unavoidable academic conflicts (exams, mandatory classes) may receive:
+        </p>
+        <ul>
+          <li>Full refund with valid academic documentation</li>
+          <li>Transfer to future similar events</li>
+          <li>Partial event participation options where applicable</li>
+        </ul>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title">5.3 Technical Issues</h3>
+        <p class="legal-text">
+          For online events affected by technical difficulties:
+        </p>
+        <ul>
+          <li>Alternative access methods will be provided</li>
+          <li>Session recordings available when possible</li>
+          <li>Partial refunds for significantly disrupted events</li>
+          <li>Full refund if event cannot be completed</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">6. Membership and Subscription Services</h2>
+      
+      <div class="subsection">
+        <h3 class="subsection-title">6.1 Premium Membership</h3>
+        <p class="legal-text">
+          If Code Venom introduces premium membership services:
+        </p>
+        <ul>
+          <li><strong>Monthly subscriptions:</strong> Cancel anytime, no refund for partial months</li>
+          <li><strong>Annual subscriptions:</strong> Pro-rated refund available within first 30 days</li>
+          <li><strong>Lifetime memberships:</strong> 90% refund within first 30 days, 50% within first 90 days</li>
+        </ul>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title">6.2 Resource Access Fees</h3>
+        <p class="legal-text">
+          For paid access to premium resources or tools:
+        </p>
+        <ul>
+          <li>7-day trial period with full refund option</li>
+          <li>No refund after resource download or significant usage</li>
+          <li>Technical issues will be resolved or refunded</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">7. Dispute Resolution</h2>
+      
+      <div class="subsection">
+        <h3 class="subsection-title">7.1 Appeal Process</h3>
+        <p class="legal-text">
+          If you disagree with a refund decision:
+        </p>
+        <ol>
+          <li>Submit a formal appeal with supporting documentation</li>
+          <li>Appeal will be reviewed by Code Venom faculty advisor</li>
+          <li>Decision will be communicated within 10 business days</li>
+          <li>Final appeals may be escalated to IET-DSMNRU administration</li>
+        </ol>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title">7.2 External Mediation</h3>
+        <p class="legal-text">
+          For unresolved disputes involving significant amounts, external mediation through university administration is available.
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">8. Exceptions and Limitations</h2>
+      
+      <div class="highlight-box">
+        <p><strong>The following are non-refundable:</strong></p>
+        <ul>
+          <li>Administrative and processing fees</li>
+          <li>Third-party service charges (platform fees, payment gateway charges)</li>
+          <li>Partial event attendance fees (unless event is cancelled)</li>
+          <li>Downloadable resources after download completion</li>
+          <li>Customized or personalized services</li>
+          <li>Events marked as "non-refundable" at time of registration</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">9. Contact for Cancellations and Refunds</h2>
+      <div class="contact-info">
+        <p><strong>Code Venom Refund Department</strong></p>
+        <p>Institute of Engineering and Technology</p>
+        <p>Dr. Sandipan Mohanty NR University (IET-DSMNRU)</p>
+        <p>Aurangabad, Maharashtra, India</p>
+        <p><strong>For cancellations and refunds:</strong></p>
+        <ul>
+          <li>Submit request through our website contact form</li>
+          <li>Include: Full name, registration number, event details, reason for cancellation</li>
+          <li>Attach supporting documentation if applicable</li>
+        </ul>
+        <p><strong>Response Time:</strong> 2-3 business days for acknowledgment, 5-10 business days for processing</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">10. Policy Updates</h2>
+      <p class="legal-text">
+        This Refund and Cancellation Policy may be updated periodically. Changes will be posted on our website with an updated "Last Updated" date. Participants will be notified of significant changes via email or website announcements.
+      </p>
+      <p class="legal-text">
+        Existing registrations at the time of policy changes will be governed by the policy in effect at the time of registration.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">11. Governing Law</h2>
+      <p class="legal-text">
+        This policy is governed by Indian consumer protection laws and regulations. Any disputes will be subject to the jurisdiction of courts in Aurangabad, Maharashtra.
+      </p>
+    </div>
+
+    <div class="section">
+      <p class="legal-text" style="text-align: center; color: #888; margin-top: 60px;">
+        © 2025 Code Venom • IET-DSMNRU. All rights reserved.<br>
+        <a href="terms-of-service.html" style="color: #00ff5b;">Terms of Service</a> | 
+        <a href="index.html" style="color: #00ff5b;">Back to Home</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
